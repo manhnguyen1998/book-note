@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "System Design Interview by Xu/Chapter 2 Back-of-the-envelope estimation.md",
+            "file": "System Design Interview by Xu/Chapter 3 A framework for system design interviews.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "System Design Interview by Xu/Chapter 2 Back-of-the-envelope estimation.md",
+                "file": "System Design Interview by Xu/Chapter 3 A framework for system design interviews.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,10 +89,13 @@
   },
   "active": "9a37bcc0e546ec4a",
   "lastOpenFiles": [
+    "System Design Interview by Xu/Chapter 3 A framework for system design interviews.md",
+    "images/Pasted image 20220717001905.png",
+    "images/Pasted image 20220717001317.png",
+    "README.md",
     "System Design Interview by Xu/Chapter 2 Back-of-the-envelope estimation.md",
     "images/Pasted image 20220715000206.png",
     "System Design Interview by Xu/Chapter 1 Scale from zero to millions of users.md",
-    "README.md",
     "images/Pasted image 20220709004724.png"
   ]
 }
