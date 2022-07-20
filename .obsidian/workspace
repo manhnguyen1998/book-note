@@ -9,7 +9,7 @@
         "state": {
           "type": "image",
           "state": {
-            "file": "images/Pasted image 20220720000746.png"
+            "file": "images/Pasted image 20220720234500.png"
           }
         }
       }
@@ -67,7 +67,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "images/Pasted image 20220720000746.png",
+                "file": "images/Pasted image 20220720234500.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,15 +87,15 @@
   },
   "active": "9a37bcc0e546ec4a",
   "lastOpenFiles": [
-    "images/Pasted image 20220720000746.png",
+    "images/Pasted image 20220720234500.png",
     "System Design Interview by Xu/Chapter 4 Design a rate limiter.md",
+    "images/Pasted image 20220720000746.png",
     "Untitled.md",
     "System Design Interview by Xu/Chapter 3 A framework for system design interviews.md",
     "images/Pasted image 20220717001905.png",
     "images/Pasted image 20220717001317.png",
     "README.md",
     "System Design Interview by Xu/Chapter 2 Back-of-the-envelope estimation.md",
-    "images/Pasted image 20220715000206.png",
-    "System Design Interview by Xu/Chapter 1 Scale from zero to millions of users.md"
+    "images/Pasted image 20220715000206.png"
   ]
 }

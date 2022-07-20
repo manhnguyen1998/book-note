@@ -100,3 +100,80 @@ The algorithm take two parameter
 - Two parameters in the algorithm are bucket size and token refill rate. However, it might be challenging to tune them properly
 
 ### Leaking bucket algorithm
+The leaking bucket algorithm is similar to the token bucket except that request are processed at a fixed rate. Usually be implemented with a FIFO queue
+- When a request arrive, the system check if the queue is full. If it is not full, the request is added to the queue
+- Otherwise, the request is dropped
+- Request are pulled from the queue and processed at regular interval
+- ![[Pasted image 20220720233652.png]]
+
+Leaking bucket algorithm take the followint two parameter
+- Bucket size: it is equal to the queue size. The queue hold the request to be processed at a fixed rate
+- Outflow rate: it defines how many request can be processed at a fixed rate, usually in seconds
+
+Shopify is using this algorithm
+
+#### Pros
+- Memory efficient given the limited queue size
+- Request are processed at a fixed rate therefore it is suitable for use case that a stable outflow rate is needed
+
+#### Cons
+- A burst of traffic fill up the queue with old request, and if they are not processed in time, recent request will be rate limited
+- There are two parameter in the algorithm. It might not be easy to tune them properly
+
+
+### Fixed window counter algorithm
+Fixed window counter algorithm works as follow
+- The algorithm divide the timeline into fix-sized time windows and assign a counter for each window
+- Each request increments the counter by one
+- Once the counter reaches the pre-defined threshold, new requests are dropped until a new time window starts
+- ![[Pasted image 20220720234500.png]]
+
+### Pros
+- Memory efficient
+- Easy to understand
+#### Cons
+- Spike in traffic at the edges of a window could cause more request than the allowed quota go through
+
+
+### Sliding window log algorithm
+The sliding window log algorithm fixed the issue of fixed window counter
+- THe algorithm keep track of request timestamp. Timestamp data is usually kept in cache, such as sorted sets of Redis
+- When a new request come in, remove all the outdated timestamp. Outdated timestamp are defined as those older than the start of the current time window
+- Add timestamp of the new request to the log
+- If the log size is the same or lower than the allowed count, a request is accepted. Otherwise, it is rejected
+- ![[Pasted image 20220720235544.png]]
+#### Pros
+- Rate limiting implemented by this algorithm is very accurate. In any rolling window, request will not exceed the rate limit
+#### Cons
+- The algorithm consumes a lot of memory because even if a request is rejected, its timestamp might still be stored in memory
+
+
+### Sliding window counter algorithm
+This algorithm is a hybrid approach that combines the fixed window counter and sliding window log
+![[Pasted image 20220721000154.png]]
+The number of request in the rolling window is calculated using the following formula:
+- Request in current window + request in the previous window * overlap percentage of the rolling window and previous window
+- Using this formula, we get 3 + 5*0.7 = 6.5 requests. It can be rounded up and down: 6
+
+#### Pros
+- It smooth out spikes in traffic because the rate is based on the average of the previous window
+- Memory efficient
+#### Cons
+- It only works for not-so-strict look back window. It is an approximation of the actual rate because it assumes requests in the previous window are evenly distributed. However, this problem may not be as bad as it seems. According to experiments done by Cloudflare, only 0.003% of request are wrongly allowed or rate limited among 400 million requests
+
+## High-level architecture
+At the high-level, we need a counter to keep track of how many requests are sent from the same user, IP address, If the counter is larger than the limit, the request is disallowed
+
+- Where to store counter
+	- Database is not good, should choose in-memory cache because it is fast, support time-based expiration strategy
+- REdis: is a popular option to implement rate limiting. It is an in-memory store that offers two command: INCR and EXPIRE
+	- INCR: It increase the stored counter by 1
+	- EXPIRE: It sets a timeout for the counter. IF the timeout expires, the counter is automatically deleted
+- ![[Pasted image 20220721001843.png]]
+
+- The client send a request to rate limiting middleware
+- Rate limiting middleware fetches the counter from the corresponding bucket in Redis and checks if the limit is reached or not
+	- If the limit is reached, the request is rejected
+	- If the limit is not reached, the request is sent to API servers. Meanwhile, the system increments the counter and saves it back to Redis
+
+# Step 3 Design deep dive
