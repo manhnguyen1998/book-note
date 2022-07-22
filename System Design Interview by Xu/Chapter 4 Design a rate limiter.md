@@ -242,3 +242,10 @@ Solution:
 After the rate limiter is put in the place, it is important to gather analytics data to check whether the rate limiter is effective. We want to make sure
 - The rate limiting algorithm is effective
 - The rate limiting rules are effective
+
+# Step 4 Wrap up
+Avoid being rate limited. Design your client with best practice
+- Use client cache to avoid making frequent API call
+- Understand the limit and do not send too many requests in a short time frame
+- Include code to catch exceptions or errors so your client can gracefully recover from exceptions
+- Add sufficient back off time to retry logic

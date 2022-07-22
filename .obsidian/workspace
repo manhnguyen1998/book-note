@@ -7,9 +7,11 @@
         "id": "9a37bcc0e546ec4a",
         "type": "leaf",
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "images/Pasted image 20220721232144.png"
+            "file": "System Design Interview by Xu/Chapter 4 Design a rate limiter.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -67,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "images/Pasted image 20220721232144.png",
+                "file": "System Design Interview by Xu/Chapter 4 Design a rate limiter.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,8 +89,8 @@
   },
   "active": "9a37bcc0e546ec4a",
   "lastOpenFiles": [
-    "images/Pasted image 20220721232144.png",
     "System Design Interview by Xu/Chapter 4 Design a rate limiter.md",
+    "images/Pasted image 20220721232144.png",
     "images/Pasted image 20220720234500.png",
     "images/Pasted image 20220720000746.png",
     "Untitled.md",
