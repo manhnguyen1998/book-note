@@ -4,22 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "9a37bcc0e546ec4a",
+        "id": "425c330d74888681",
         "type": "leaf",
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "images/Pasted image 20220723001150.png"
-          }
-        }
-      },
-      {
-        "id": "df1415e990cb46a1",
-        "type": "leaf",
-        "state": {
-          "type": "image",
-          "state": {
-            "file": "images/Pasted image 20220723001150.png"
+            "file": "System Design Interview by Xu/Chapter 6 Design a key-value store.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -77,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "images/Pasted image 20220723001150.png",
+                "file": "System Design Interview by Xu/Chapter 6 Design a key-value store.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "2c4bc64bc57b5d35",
+  "active": "425c330d74888681",
   "lastOpenFiles": [
-    "images/Pasted image 20220723001327.png",
+    "images/Pasted image 20220725230356.png",
+    "System Design Interview by Xu/Chapter 6 Design a key-value store.md",
     "images/Pasted image 20220723001150.png",
+    "images/Pasted image 20220723001327.png",
     "images/Pasted image 20220723225232.png",
     "System Design Interview by Xu/Chapter 5 Design consistent hashing.md",
     "System Design Interview by Xu/Chapter 4 Design a rate limiter.md",
     "images/Pasted image 20220721232144.png",
     "images/Pasted image 20220720234500.png",
-    "images/Pasted image 20220720000746.png",
-    "Untitled.md",
-    "System Design Interview by Xu/Chapter 3 A framework for system design interviews.md"
+    "images/Pasted image 20220720000746.png"
   ]
 }
