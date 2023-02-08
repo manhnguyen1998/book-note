@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "System Design Interview by Xu/Chapter 6 Design a key-value store.md",
+            "file": "System Design Interview by Xu/Chapter 9 Design a web crawler.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "System Design Interview by Xu/Chapter 6 Design a key-value store.md",
+                "file": "System Design Interview by Xu/Chapter 9 Design a web crawler.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "425c330d74888681",
   "lastOpenFiles": [
-    "images/Pasted image 20220725230356.png",
+    "AWS/Lecture 4.md",
+    "AWS/Lecture 1.md",
+    "Plan for Projects/List planning.md",
+    "DevUP/Note.md",
+    "Note công việc/MBO.md",
+    "Barking up the wrong tree/Just note.md",
+    "System Design Interview by Xu/Chapter 7 Design a unique ID generator in Distributed systems.md",
     "System Design Interview by Xu/Chapter 6 Design a key-value store.md",
-    "images/Pasted image 20220723001150.png",
-    "images/Pasted image 20220723001327.png",
-    "images/Pasted image 20220723225232.png",
-    "System Design Interview by Xu/Chapter 5 Design consistent hashing.md",
-    "System Design Interview by Xu/Chapter 4 Design a rate limiter.md",
-    "images/Pasted image 20220721232144.png",
-    "images/Pasted image 20220720234500.png",
-    "images/Pasted image 20220720000746.png"
+    "images/Pasted image 20220906223519.png",
+    "images/Pasted image 20220817231324.png"
   ]
 }
